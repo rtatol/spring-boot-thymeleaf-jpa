@@ -12,6 +12,9 @@
         <th:block th:include="common/menu :: menu"/>
         <!--/* grid */-->
         <main class="large-12 columns">
+            <!--/* global messages */-->
+            <th:block th:include="common/flash :: flash"/>
+            <!--/* main content */-->
             <div layout:fragment="content"/>
         </main>
         <!--/* common scripts */-->

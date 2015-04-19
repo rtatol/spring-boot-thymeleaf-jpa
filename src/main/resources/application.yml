@@ -7,5 +7,12 @@ server:
 
 # spring conf
 spring:
+    application.name: spring-boot-thymeleaf
     thymeleaf:
         cache: false
+
+# logging conf
+logging:
+    level:
+        org.springframework.web: INFO
+        com.example.boot.thymeleaf: DEBUG

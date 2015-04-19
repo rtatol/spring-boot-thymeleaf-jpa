@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="common/layout">
+    <head>
+        <title th:text="#{'form'}">Page Title</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="row">
+                <h3>New item</h3>
+                <form id="form" th:action="@{/item}" th:object="${item}" action="#" method="post">
+                    <!--/* name field */-->
+                    <label for="name">Name*</label>
+                    <input th:field="*{name}" th:errorclass="error" type="text" maxlength="45"/>
+                    <small class="error" th:if="${#fields.hasErrors('name')}" th:text="${#fields.errors('name')}"/>
+
+                    <!--/* count field */-->
+                    <label for="count">Count</label>
+                    <input th:field="*{count}" th:errorclass="error" type="number"/>
+                    <small class="error" th:if="${#fields.hasErrors('count')}" th:text="${#fields.errors('count')}"/>
+
+                    <!--/* price field */-->
+                    <label for="price">Price</label>
+                    <input th:field="*{price}" th:errorclass="error" type="number" step="0.01"/>
+                    <small class="error" th:if="${#fields.hasErrors('price')}" th:text="${#fields.errors('price')}"/>
+
+                    <!--/* description field */-->
+                    <label for="description">Description</label>
+                    <textarea th:field="*{description}" maxlength="255"/>
+                    <small class="error" th:if="${#fields.hasErrors('description')}" th:text="${#fields.errors('description')}"/>
+
+                    <!--/* submit */-->
+                    <input type="submit" value="Create" class="button"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
