@@ -1,0 +1,11 @@
+# server conf
+server:
+    port: 18080
+    tomcat:
+        access_log_enabled: true
+        basedir: target/tomcat
+
+# spring conf
+spring:
+    thymeleaf:
+        cache: false

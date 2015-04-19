@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="common/layout">
+    <head>
+        <title th:text="#{'list'}">Page Title</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <h3>TODO</h3>
+            <div class="row">
+                <article th:text="#{'list'}"/>
+            </div>
+        </div>
+    </body>
+</html>

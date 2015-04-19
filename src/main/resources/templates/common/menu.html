@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title/>
+    </head>
+    <body th:fragment="menu">
+        <nav class="top-bar" role="navigation">
+            <ul class="title-area">
+                <li class="name">
+                    <h1>
+                        <a href="/" th:text="#{'app.name'}">App Title</a>
+                    </h1>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li><a href="/" th:text="#{'dashboard'}"></a></li>
+                    <li><a href="/form" th:text="#{'form'}"></a></li>
+                    <li><a href="/list" th:text="#{'list'}"></a></li>
+                </ul>
+            </section>
+        </nav>
+    </body>
+</html>
