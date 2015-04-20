@@ -6,9 +6,28 @@
     </head>
     <body>
         <div layout:fragment="content">
-            <h3>TODO</h3>
             <div class="row">
-                <article th:text="#{'list'}"/>
+                <h3 th:text="#{'list'}"/>
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>CREATE DATE</th>
+                            <th>MODIFY DATE</th>
+                            <th>VERSION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="item : ${itemList}">
+                            <td th:text="${item.id}"/>
+                            <td th:text="${item.name}"/>
+                            <td th:text="${item.createDate}"/>
+                            <td th:text="${item.modifyDate}"/>
+                            <td th:text="${item.version}"/>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>

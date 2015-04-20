@@ -1,16 +1,34 @@
 package com.example.boot.thymeleaf.domain;
 
 import java.math.BigDecimal;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class Item {
+@NamedQueries({
+    @NamedQuery(name = "Item.findByName", query = "SELECT i FROM Item i WHERE i.name = :name")
+})
+@Entity
+@Table(name = "ITEM")
+public class Item extends AbstractBaseEntity {
 
     @NotNull
     @Size(min = 3, max = 45)
+    @Column(name = "NAME", length = 45)
     private String name;
+
+    @Column(name = "COUNT")
     private Long count;
+
+    @Column(name = "PRICE")
     private BigDecimal price;
+
+    @Size(max = 255)
+    @Column(name = "DESCRIPTION", length = 255)
     private String description;
 
     public String getName() {
@@ -44,5 +62,4 @@ public class Item {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }
