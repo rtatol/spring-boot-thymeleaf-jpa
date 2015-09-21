@@ -31,7 +31,7 @@ public class PersistenceContext {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource());
-        emf.setPackagesToScan(new String[]{"com.example.boot.thymeleaf"});
+        emf.setPackagesToScan("com.example.boot.thymeleaf");
         emf.setPersistenceUnitName("persistenceUnit");
         emf.setJpaPropertyMap(jpaPropertyMap());
 

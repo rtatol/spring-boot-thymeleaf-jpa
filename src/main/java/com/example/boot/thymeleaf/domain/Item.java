@@ -9,12 +9,16 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import static com.example.boot.thymeleaf.domain.Item.FIND_BY_NAME;
+
 @NamedQueries({
-    @NamedQuery(name = "Item.findByName", query = "SELECT i FROM Item i WHERE i.name = :name")
+        @NamedQuery(name = FIND_BY_NAME, query = "SELECT i FROM Item i WHERE i.name = :name")
 })
 @Entity
 @Table(name = "ITEM")
 public class Item extends AbstractBaseEntity {
+
+    public final static String FIND_BY_NAME = "Item.findByName";
 
     @NotNull
     @Size(min = 3, max = 45)

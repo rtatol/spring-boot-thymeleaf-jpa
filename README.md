@@ -1,6 +1,8 @@
 # spring-boot-thymeleaf-jpa
 
-Sample application demonstrates how to use Spring Boot with Thymeleaf template engine and JPA.
+Sample application demonstrates how to use Spring Boot with Thymeleaf template engine and JPA (EclipseLink).
+
+[![Build Status](https://travis-ci.org/rtatol/spring-boot-thymeleaf-jpa.svg)](https://travis-ci.org/rtatol/spring-boot-thymeleaf-jpa)
 
 ###### QuickStart
 ```
